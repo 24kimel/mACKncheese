@@ -41,7 +41,7 @@ typedef __u64 __bitwise __be64;
 typedef __u16 __bitwise __sum16;
 typedef __u32 __bitwise __wsum;
  
-struct tcphdr {
+struct __attribute__((packed)) tcphdr {
 	__be16	source;
 	__be16	dest;
 	__be32	seq;
