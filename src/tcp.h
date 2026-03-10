@@ -77,6 +77,25 @@ struct __attribute__((packed)) tcphdr {
 	__sum16	check;
 	__be16	urg_ptr;
 };
+
+typedef struct __attribute__((packed)) mss_option {
+	uint8_t kind;
+	uint8_t length;
+	__be16 mss;
+} mss_option_t;
+
+typedef struct __attribute__((packed)) mss_tcphdr {
+	struct tcphdr hdr;
+	mss_option_t mss_option;
+} mss_tcphdr_t;
+
+typedef struct __attribute__((packed)) ipv4_pseudo_header {
+	__be32 source_address;
+	__be32 dest_address;
+	uint8_t zero;
+	uint8_t ipproto;
+	__be16 tcp_length;
+} ipv4_pseudo_header_t;
  
  
 #endif
