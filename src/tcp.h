@@ -1,45 +1,15 @@
 #ifndef TCP_H
 #define TCP_H
+
 #include <stdint.h>
+
+#include "types.h"
  
 typedef enum tcp_status_s {
     TCP_STATUS_OK = 0,
     TCP_STATUS_ERROR = 1,
 } tcp_status;
  
- 
-#define __LITTLE_ENDIAN_BITFIELD
- 
-/*
- * Below are truly Linux-specific types that should never collide with
- * any application/library that wants linux/types.h.
- */
- 
-// #define __CHECKER__
- 
-/* sparse defines __CHECKER__; see Documentation/dev-tools/sparse.rst */
-#ifdef __CHECKER__
-#define __bitwise	__attribute__((bitwise))
-#else
-#define __bitwise
-#endif
- 
-/* The kernel doesn't use this legacy form, but user space does */
-#define __bitwise__ __bitwise
- 
-typedef uint16_t __u16;
-typedef uint32_t __u32;
-typedef uint64_t __u64;
- 
-typedef __u16 __bitwise __le16;
-typedef __u16 __bitwise __be16;
-typedef __u32 __bitwise __le32;
-typedef __u32 __bitwise __be32;
-typedef __u64 __bitwise __le64;
-typedef __u64 __bitwise __be64;
- 
-typedef __u16 __bitwise __sum16;
-typedef __u32 __bitwise __wsum;
  
 struct __attribute__((packed)) tcphdr {
 	__be16	source;

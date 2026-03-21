@@ -1,5 +1,5 @@
 
-sources = ["main.c"]
+sources = Glob("*.c")
 output_name = "test"
 env = Environment(parse_flags="-I.")
 
