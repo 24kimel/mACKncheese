@@ -1,3 +1,5 @@
+# ruff: noqa: F821
+
 
 sources = Glob("*.c")
 output_name = "test"

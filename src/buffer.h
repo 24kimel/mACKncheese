@@ -3,10 +3,10 @@
 
 #include <stddef.h>
 
-
-typedef struct {
-	size_t len;
-	void *data;
+typedef struct
+{
+  size_t len;
+  void *data;
 } buffer_t;
 
 #endif /* BUFFER_H */

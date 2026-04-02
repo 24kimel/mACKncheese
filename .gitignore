@@ -12,3 +12,6 @@ wheels/
 
 # scons
 .sconsign.dblite
+
+
+compile_commands.json

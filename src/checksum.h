@@ -1,9 +1,9 @@
 #ifndef CHECKSUM_H
 #define CHECKSUM_H
 
-#include <stdint.h>
 #include "buffer.h"
 #include "types.h"
+#include <stdint.h>
 
 /**
  * @brief calculate the checksum field for a TCP packet.
@@ -14,6 +14,6 @@
  *
  * @returns the checksum field for the TCP packet.
  */
-__sum16 tcp_checksum(buffer_t *packet, uint32_t source_ip, uint32_t dest_ip);
+__sum16 tcp_checksum (buffer_t *packet, uint32_t source_ip, uint32_t dest_ip);
 
 #endif /* CHECKSUM_H */
